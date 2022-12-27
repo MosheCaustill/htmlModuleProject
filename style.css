@@ -1,0 +1,156 @@
+body {
+    background-image: url('./media/guitar background.jpg');
+    background-size: contain;
+
+}
+
+.log {
+    text-align: center;
+}
+
+.log input {
+    width: 150px;
+    margin: 5px;
+    text-align: center;
+}
+
+input {
+    border-radius: 20px;
+}
+
+input:hover {
+    background-color: aquamarine;
+}
+
+textarea {
+    border-radius: 20px;
+    text-align: center;
+}
+
+#logBtn {
+    width: 330px;
+    margin: 5px;
+}
+button {
+    border-radius: 20px;
+}
+button:hover {
+    transform: scale(1.05);
+}
+
+#logOutBtn {
+    width: 330px;
+    margin: 5px;
+}
+
+#logStatus {
+    background-color: white;
+    color: rgb(6, 50, 6);
+    width: 330px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.header {
+    background-color:aquamarine;
+    opacity: 0.95;
+    height: 100px;
+    padding-top: 20px;
+    margin-top: 5px;
+}
+.headerText {
+    color: rgb(102, 35, 156);
+    padding-top: 5px;
+    font-weight: 600;
+}
+.post {
+    background-color: rgb(94, 136, 172);
+    opacity: 0.8;
+    margin: auto;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: rgb(113, 57, 7);
+    margin-top: 10px;
+}
+h1 {
+    text-align: center;
+    padding-top: 5px;
+    font-style: italic;
+}
+h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+h3 {
+    width: 90%;
+    margin: auto;
+}
+.post input {
+    width: 60%;
+    margin: 5px;
+    text-align: center;
+    margin-left: 25px;
+}
+ul {
+    padding-bottom: 10px;
+}
+li {
+    font-size: larger;
+}
+.postCreate {
+    margin-top: 10px;
+    padding-bottom: 5px;
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+    background-color: rgb(38, 103, 122);
+    opacity: 0.9;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: rgb(42, 165, 124);
+}
+.postCreate input {
+    width: 380px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.footer {
+    display: flex;
+    background-color: aqua;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.footerText {
+    margin: 5px;
+    height: 40px;
+    text-align: center;
+    font-style: italic;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.footer img{
+    padding-top: 20px;
+    width: 30px;
+    height: 30px;
+}
+
+@media(min-width: 600px) {
+    .log{
+        text-align: left;
+    }
+    #logStatus {
+        margin: 5px;
+    }
+    .post {
+        width: 70%;
+    }
+    .postCreate {
+        width: 70%;
+    }
+    }
+    @media(min-width: 1000px) {
+        .post input {
+            width: 50%;
+        }
+    }
