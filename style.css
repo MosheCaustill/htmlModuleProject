@@ -1,7 +1,7 @@
 body {
     background-image: url('./media/guitar background.jpg');
     background-size: contain;
-
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .log {
@@ -19,7 +19,7 @@ input {
 }
 
 input:hover {
-    background-color: aquamarine;
+    background-color: rgb(186, 234, 218);
 }
 
 textarea {
@@ -63,6 +63,7 @@ button:hover {
     padding-top: 5px;
     font-weight: 600;
 }
+
 .post {
     background-color: rgb(94, 136, 172);
     opacity: 0.8;
@@ -72,31 +73,39 @@ button:hover {
     border-color: rgb(113, 57, 7);
     margin-top: 10px;
 }
+
 h1 {
     text-align: center;
     padding-top: 5px;
     font-style: italic;
 }
+
 h2 {
     text-align: center;
     text-decoration: underline;
 }
+
 h3 {
     width: 90%;
     margin: auto;
 }
+
 .post input {
     width: 60%;
     margin: 5px;
     text-align: center;
     margin-left: 25px;
 }
+
 ul {
     padding-bottom: 10px;
 }
+
 li {
     font-size: larger;
 }
+
+
 .postCreate {
     margin-top: 10px;
     padding-bottom: 5px;
