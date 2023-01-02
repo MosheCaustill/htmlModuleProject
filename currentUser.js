@@ -1,7 +1,6 @@
 export class CurrentUser {
-  user
+  user={};
   constructor() {
-    this.user;
     this.getCurrentUser();
   }
   getCurrentUser() {

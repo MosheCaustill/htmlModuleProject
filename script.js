@@ -6,19 +6,34 @@ import { Posts } from "./posts.js";
 import { Comments } from "./comments.js";
 import { CurrentUser } from "./currentUser.js";
 
-let users = new Users();
+//restart info////יש להתעלם יצרתי זאת כדי לבחון מה יקרה כאשר האתר נטען הבמחשב חדש//
+function restart() {
+  localStorage.removeItem("users");
+  localStorage.removeItem("comments");
+  localStorage.removeItem("currentUser");
+  localStorage.removeItem("posts");
+}
+// restart();  //רק לאיתחול של האתר והנתונים למקרה הצורך//
 
+
+let users = new Users();
 //מעדכן את משתמשי ברירת המחדל רק בפעם הראשונה של הפעלת האתר במחשב ספציפי//
+
 if (users.usersList.length == 0) {
+  
   let guest = new User("guest", "guest", users);
   guest.userType = "guest";
+  
   users.usersList.push(guest); //usersList[0]//
   let admin = new User("Admin", "Admin", users);
   admin.userType = "admin";
+  
   users.usersList.push(admin); //usersList[1]//
   users.updateUsersList();
   let currentUser = new CurrentUser();
-  currentUser.user=guest;
+  
+  currentUser.user=users.usersList[0];
+  currentUser.updateCurrentUser();
 };
 
 //יוצר אובייקטים המשתמשים בלוקל סטורג//
@@ -28,18 +43,6 @@ let currentUser = new CurrentUser();
 //שומר על משתמש מחובר//
 changeLogStatus(currentUser.user);
 
-//restart info////יש להתעלם יצרתי זאת כדי לבחון מה יקרה כאשר האתר נטען הבמחשב חדש//
-function restart() {
-  users.usersList=[];
-  users.updateUsersList();
-  posts.postsList=[];
-  posts.updatePostsList();
-  comments.commentsList=[];
-  comments.updateCommentsList();
-  currentUser.user=users.usersList[0];
-  currentUser.updateCurrentUser();
-}
-// restart();  //רק לאיתחול של האתר והנתונים למקרה הצורך//
 
 /////////////////////log in/out////////////////////////
 let logBtn = document.getElementById("logBtn");
@@ -168,7 +171,7 @@ function addComments(comments) {
 
 ///////////adding comment from Html////////////
 function addComment(post) {
-  if (currentUser.user.userType == ("user" || "admin")) {
+  if (currentUser.user.userType != "guest") {
     let commentContent = document.getElementById(
       "commentContent" + post.id
     ).value;
